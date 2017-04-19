@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsakeDemo
 {
-    public class PrimeFactors
+    public class Testing
     {
     }
 }

@@ -4,11 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace PsakeDemo.Tests
 {
     [TestClass]
-    public class PrimeFactorsTest
+    public class TestingTests
     {
         [TestMethod]
         public void TestMethod1()
         {
+			Assert.IsTrue(false);
         }
     }
 }

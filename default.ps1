@@ -10,7 +10,7 @@ FormatTaskName "-------------------- {0} --------------------"
 Task default -Depends Build
 
 Task Build {
-    Exec { msbuild $buildFileName /t:Build /p:Configuration=Debug /v:minimal}
+    msbuild $buildFileName /t:Build /p:Configuration=Debug /v:minimal
 }
 
 Task Test -Depends Build {
@@ -18,5 +18,5 @@ Task Test -Depends Build {
 }
 
 Task Clean {
-	Exec { msbuild $buildFileName /t:Clean }
+	msbuild $buildFileName /t:Clean
 }
