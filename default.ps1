@@ -25,3 +25,7 @@ Task Test -Depends Build {
 Task Clean {
 	msbuild $buildFileName /t:Clean
 }
+
+Task Deploy -Depends Build -precondition { return $env }{
+	"Deploying $environment"
+}
