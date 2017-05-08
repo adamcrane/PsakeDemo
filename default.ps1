@@ -29,3 +29,17 @@ Task Clean {
 Task Deploy -Depends Build -precondition { return $env }{
 	"Deploying $environment"
 }
+
+Task FailureTask {
+	#use cmd.exe and the DOS exit() function to simulate a failed command-line execution
+	"Executing command-line program"
+	cmd /c exit (1) 
+	CheckForError("Failure Task")
+}
+
+function CheckForError($task) {
+  if ($lastexitcode -ne 0)
+  {
+    throw "$task failed"
+  }
+}
